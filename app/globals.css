@@ -1,15 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #333333;
   --color-primary: #e8837a;
-  --color-primary-light: #fdf0ee;
   --color-primary-dark: #c96860;
+  --color-primary-light: #fdf0ee;
+  --color-text: #34414e;
+  --color-text-secondary: #4c6072;
+  --color-bg-dark: #1f2d32;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background: #fff;
+  color: var(--color-text);
+  font-family: 游ゴシック体, "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Shiny button animation */
+.btn-shiny {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shiny::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    25deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: translateX(-100%);
+  animation: shiny 2.5s ease-in-out infinite;
+}
+@keyframes shiny {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
 }

@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "minoribaジョブ | 美容・整体・マッサージ業界専門求人",
-  description: "美容エステ・整体マッサージ業界専門の求人紹介。週1日・1時間〜OK！自由に働けるセラピスト副業。全国約600店舗で希望エントリー制。",
+  description:
+    "美容エステ・整体マッサージ業界専門の求人紹介。週1日・1時間〜OK！自由に働けるセラピスト副業。全国約600店舗で希望エントリー制。",
 };
 
 export default function RootLayout({
