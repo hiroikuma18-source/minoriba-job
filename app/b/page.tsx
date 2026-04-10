@@ -6,7 +6,7 @@ const APPLY_URL = "https://lin.ee/XXXXXXXX";
 const numbers = [
   { value: "週1日〜", label: "最短勤務日数" },
   { value: "1時間〜", label: "最短勤務時間" },
-  { value: "600+",   label: "全国店舗数" },
+  { value: "600+",    label: "全国店舗数" },
   { value: "¥2,520", label: "60分施術〜" },
 ];
 
@@ -62,64 +62,69 @@ const requirements = [
 
 export default function PageB() {
   return (
-    <div className="min-h-screen bg-[#1a1a2e] text-white font-sans">
+    <div className="min-h-screen bg-white text-[#34414e] font-sans">
+
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#1a1a2e]/95 backdrop-blur border-b border-white/10">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
         <div className="max-w-lg mx-auto px-5 h-14 flex items-center justify-between">
-          <Image src="/logo.webp" alt="minoriba" width={110} height={18} className="h-6 w-auto brightness-0 invert" />
+          <Image src="/logo.webp" alt="minoriba" width={110} height={18} className="h-6 w-auto" />
           <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
-            className="bg-[#e8837a] text-white text-xs font-bold px-4 py-2 rounded-full">
+            className="bg-gradient-to-r from-[#f06a6a] to-[#e8837a] text-white text-xs font-bold px-4 py-2 rounded-full shadow-sm">
             応募する
           </a>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/hero2.webp" alt="サロン" fill className="object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e]/60 via-transparent to-[#1a1a2e]" />
-        </div>
-        <div className="relative max-w-lg mx-auto px-5 pt-16 pb-20 text-center">
-          <span className="inline-block border border-[#e8837a] text-[#e8837a] text-xs px-3 py-1 rounded-full mb-4">
+      {/* Hero — light gradient background like SHElikes */}
+      <section className="relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #e8f4f8 0%, #fdf0ee 50%, #fce4f0 100%)" }}>
+        <div className="max-w-lg mx-auto px-5 pt-10 pb-6 text-center">
+          <span className="inline-block bg-white/80 text-[#f06a6a] text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">
             美容・整体・マッサージ専門求人
           </span>
-          <h1 className="text-4xl font-black leading-tight mb-4">
-            空き時間を<br />
-            <span className="text-[#e8837a]">収入</span>に変える
+          <h1 className="text-3xl font-black leading-tight mb-4 text-[#34414e]">
+            私らしい働き方を<br />
+            <span className="text-[#f06a6a]">セラピスト副業</span>で叶える
           </h1>
-          <p className="text-white/70 text-sm leading-relaxed mb-8">
+          <p className="text-sm text-[#4c6072] leading-relaxed mb-6">
             週1日・1時間〜。全国600店舗でいつでも自由に働ける<br />新しいセラピスト副業のカタチ。
           </p>
+
+          {/* Hero image */}
+          <div className="relative rounded-3xl overflow-hidden aspect-[4/3] mb-6 shadow-lg">
+            <Image src="/hero1.webp" alt="セラピスト" fill className="object-cover object-top" priority />
+          </div>
+
           <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
-            className="btn-shiny inline-flex items-center gap-2 bg-[#e8837a] text-white font-bold px-8 py-4 rounded-full text-lg shadow-xl shadow-[#e8837a]/30">
+            className="btn-shiny inline-flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#f06a6a] to-[#e8837a] text-white font-bold px-8 py-4 rounded-full text-lg shadow-lg shadow-[#f06a6a]/30">
             応募・詳細はこちら
             <ArrowRight className="w-5 h-5" />
           </a>
-          <p className="text-white/40 text-xs mt-3">※公式LINEに友だち登録していただきます</p>
+          <p className="text-xs text-gray-400 mt-2">※公式LINEに友だち登録していただきます</p>
         </div>
       </section>
 
       {/* Numbers */}
-      <section className="bg-[#12122a] py-10 px-5">
+      <section className="bg-white py-8 px-5 border-b border-gray-100">
         <div className="max-w-lg mx-auto grid grid-cols-4 gap-3">
           {numbers.map(({ value, label }) => (
             <div key={label} className="text-center">
-              <p className="text-xl font-black text-[#e8837a] leading-none mb-1">{value}</p>
-              <p className="text-[10px] text-white/50 leading-tight">{label}</p>
+              <p className="text-lg font-black text-[#f06a6a] leading-none mb-1">{value}</p>
+              <p className="text-[10px] text-gray-400 leading-tight">{label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Welcome tags */}
-      <section className="bg-[#1a1a2e] py-12 px-5 border-t border-white/10">
+      <section className="py-12 px-5" style={{ background: "linear-gradient(180deg, #fff 0%, #fdf0ee 100%)" }}>
         <div className="max-w-lg mx-auto">
-          <p className="text-xs text-[#e8837a] font-bold tracking-widest uppercase text-center mb-2">Welcome</p>
-          <h2 className="text-2xl font-black text-center mb-6">こんな方を歓迎します</h2>
+          <p className="text-xs text-[#f06a6a] font-bold tracking-widest uppercase text-center mb-2">Welcome</p>
+          <h2 className="text-2xl font-black text-center mb-2 text-[#34414e]">こんな方を歓迎します</h2>
+          <p className="text-xs text-gray-400 text-center mb-6">どんなバックグラウンドの方でも大歓迎です</p>
           <div className="flex flex-wrap gap-2 justify-center">
             {welcomeTags.map((t) => (
-              <span key={t} className="border border-white/20 text-white/80 text-sm px-4 py-2 rounded-full">
+              <span key={t} className="bg-white border border-[#f06a6a]/20 text-[#34414e] text-sm px-4 py-2 rounded-full shadow-sm">
                 {t}
               </span>
             ))}
@@ -128,19 +133,21 @@ export default function PageB() {
       </section>
 
       {/* Reasons */}
-      <section className="bg-[#12122a] py-12 px-5">
+      <section className="bg-white py-12 px-5">
         <div className="max-w-lg mx-auto">
-          <p className="text-xs text-[#e8837a] font-bold tracking-widest uppercase text-center mb-2">Why</p>
-          <h2 className="text-2xl font-black text-center mb-8">選ばれる4つの理由</h2>
+          <p className="text-xs text-[#f06a6a] font-bold tracking-widest uppercase text-center mb-2">Why</p>
+          <h2 className="text-2xl font-black text-center mb-8 text-[#34414e]">選ばれる4つの理由</h2>
           <div className="grid grid-cols-2 gap-3">
             {reasons.map(({ no, title, body, icon: Icon }) => (
-              <div key={no} className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#e8837a]/50 transition-colors">
+              <div key={no} className="bg-[#fdf0ee] rounded-2xl p-5 hover:shadow-md transition-shadow border border-[#f5dbd8]">
                 <div className="flex items-center gap-2 mb-3">
-                  <Icon className="w-5 h-5 text-[#e8837a]" strokeWidth={1.5} />
-                  <span className="text-xs text-[#e8837a] font-bold">{no}</span>
+                  <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    <Icon className="w-4 h-4 text-[#f06a6a]" strokeWidth={1.5} />
+                  </div>
+                  <span className="text-xs text-[#f06a6a] font-bold">{no}</span>
                 </div>
-                <h3 className="text-base font-black leading-snug mb-2 whitespace-pre-line">{title}</h3>
-                <p className="text-xs text-white/60 leading-relaxed">{body}</p>
+                <h3 className="text-base font-black leading-snug mb-2 whitespace-pre-line text-[#34414e]">{title}</h3>
+                <p className="text-xs text-[#4c6072] leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -148,47 +155,49 @@ export default function PageB() {
       </section>
 
       {/* Income */}
-      <section className="bg-[#1a1a2e] py-12 px-5 border-t border-white/10">
+      <section className="py-12 px-5" style={{ background: "linear-gradient(180deg, #fdf0ee 0%, #fce4f0 100%)" }}>
         <div className="max-w-lg mx-auto">
-          <p className="text-xs text-[#e8837a] font-bold tracking-widest uppercase text-center mb-2">Income</p>
-          <h2 className="text-2xl font-black text-center mb-2">収入イメージ</h2>
-          <p className="text-xs text-white/50 text-center mb-8">＋指名料100%が上乗せされます</p>
+          <p className="text-xs text-[#f06a6a] font-bold tracking-widest uppercase text-center mb-2">Income</p>
+          <h2 className="text-2xl font-black text-center mb-2 text-[#34414e]">収入イメージ</h2>
+          <p className="text-xs text-gray-400 text-center mb-8">＋指名料100%が上乗せされます</p>
           <div className="space-y-4 mb-8">
             {incomeItems.map(({ label, yen, max }) => (
-              <div key={label}>
+              <div key={label} className="bg-white rounded-2xl px-5 py-4 shadow-sm">
                 <div className="flex justify-between items-baseline mb-2">
-                  <span className="text-sm text-white/70">{label}</span>
-                  <span className="text-xl font-black text-[#e8837a]">¥{yen}<span className="text-sm font-normal text-white/50">円〜/60分</span></span>
+                  <span className="text-sm text-[#4c6072]">{label}</span>
+                  <span className="text-xl font-black text-[#f06a6a]">
+                    {yen}<span className="text-sm font-normal text-gray-400">円〜/60分</span>
+                  </span>
                 </div>
-                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#e8837a] to-[#f5a89f] rounded-full transition-all" style={{ width: `${max}%` }} />
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-[#f06a6a] to-[#e8837a] rounded-full" style={{ width: `${max}%` }} />
                 </div>
               </div>
             ))}
           </div>
           <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
-            className="btn-shiny block w-full bg-[#e8837a] text-white font-bold py-4 rounded-full text-lg text-center shadow-lg shadow-[#e8837a]/30">
+            className="btn-shiny block w-full bg-gradient-to-r from-[#f06a6a] to-[#e8837a] text-white font-bold py-4 rounded-full text-lg text-center shadow-lg shadow-[#f06a6a]/30">
             今すぐ応募する
           </a>
         </div>
       </section>
 
       {/* Process */}
-      <section className="bg-[#12122a] py-12 px-5">
+      <section className="bg-white py-12 px-5">
         <div className="max-w-lg mx-auto">
-          <p className="text-xs text-[#e8837a] font-bold tracking-widest uppercase text-center mb-2">Process</p>
-          <h2 className="text-2xl font-black text-center mb-8">選考の流れ</h2>
+          <p className="text-xs text-[#f06a6a] font-bold tracking-widest uppercase text-center mb-2">Process</p>
+          <h2 className="text-2xl font-black text-center mb-8 text-[#34414e]">選考の流れ</h2>
           <div className="flex items-start justify-between">
             {selectionSteps.map((step, i) => (
               <div key={step} className="flex items-center">
                 <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full border-2 border-[#e8837a] flex items-center justify-center mb-2">
-                    <span className="text-[#e8837a] text-xs font-bold">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#f06a6a] to-[#e8837a] flex items-center justify-center mb-2 shadow-sm">
+                    <span className="text-white text-xs font-bold">{String(i + 1).padStart(2, "0")}</span>
                   </div>
-                  <p className="text-xs font-bold text-white/80 text-center leading-tight">{step}</p>
+                  <p className="text-xs font-bold text-[#34414e] text-center leading-tight">{step}</p>
                 </div>
                 {i < selectionSteps.length - 1 && (
-                  <ChevronRight className="w-4 h-4 text-[#e8837a]/50 mb-4 mx-0.5 flex-none" />
+                  <ChevronRight className="w-4 h-4 text-[#f06a6a]/50 mb-4 mx-0.5 flex-none" />
                 )}
               </div>
             ))}
@@ -197,15 +206,15 @@ export default function PageB() {
       </section>
 
       {/* Requirements */}
-      <section id="requirements" className="bg-[#1a1a2e] py-12 px-5 border-t border-white/10">
+      <section id="requirements" className="bg-[#fdf0ee] py-12 px-5">
         <div className="max-w-lg mx-auto">
-          <p className="text-xs text-[#e8837a] font-bold tracking-widest uppercase text-center mb-2">Requirements</p>
-          <h2 className="text-2xl font-black text-center mb-8">募集要項</h2>
-          <div className="divide-y divide-white/10">
+          <p className="text-xs text-[#f06a6a] font-bold tracking-widest uppercase text-center mb-2">Requirements</p>
+          <h2 className="text-2xl font-black text-center mb-8 text-[#34414e]">募集要項</h2>
+          <div className="bg-white rounded-2xl overflow-hidden divide-y divide-gray-100 shadow-sm">
             {requirements.map((req) => (
-              <div key={req.label} className="py-4 grid grid-cols-3 gap-3">
-                <dt className="text-xs font-bold text-[#e8837a]">{req.label}</dt>
-                <dd className="text-sm text-white/70 col-span-2">
+              <div key={req.label} className="py-4 px-5 grid grid-cols-3 gap-3">
+                <dt className="text-xs font-bold text-[#f06a6a]">{req.label}</dt>
+                <dd className="text-sm text-[#34414e] col-span-2">
                   {req.content ?? (
                     <ul className="space-y-1">{req.items?.map((item) => <li key={item}>・{item}</li>)}</ul>
                   )}
@@ -217,12 +226,12 @@ export default function PageB() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#e8837a] py-14 px-5">
+      <section className="py-14 px-5" style={{ background: "linear-gradient(135deg, #f06a6a 0%, #e8837a 100%)" }}>
         <div className="max-w-lg mx-auto text-center">
           <h3 className="text-2xl font-black text-white mb-2">まずは詳細を見てみる</h3>
           <p className="text-white/80 text-sm mb-6">公式LINEで求人情報をお届けします</p>
           <a href={APPLY_URL} target="_blank" rel="noopener noreferrer"
-            className="block w-full bg-white text-[#e8837a] font-black py-4 rounded-full text-lg shadow-lg mb-3">
+            className="block w-full bg-white text-[#f06a6a] font-black py-4 rounded-full text-lg shadow-lg mb-3">
             応募／詳細の確認はこちら
           </a>
           <p className="text-white/70 text-xs mb-4">※公式LINEに友だち登録していただきます。</p>
@@ -230,9 +239,9 @@ export default function PageB() {
         </div>
       </section>
 
-      <footer className="bg-[#12122a] py-8 px-5 text-center">
-        <Image src="/logo.webp" alt="minoriba" width={100} height={17} className="h-6 w-auto mx-auto mb-4 brightness-0 invert" />
-        <p className="text-xs text-white/30">© 2024 minoriba. All rights reserved.</p>
+      <footer className="bg-white border-t border-gray-100 py-8 px-5 text-center">
+        <Image src="/logo.webp" alt="minoriba" width={100} height={17} className="h-6 w-auto mx-auto mb-4" />
+        <p className="text-xs text-gray-300">© 2024 minoriba. All rights reserved.</p>
       </footer>
     </div>
   );
