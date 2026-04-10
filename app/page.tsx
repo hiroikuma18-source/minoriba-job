@@ -70,7 +70,7 @@ export default function Page() {
             <div className="grid grid-cols-2 gap-2 mb-6">
               <div className="aspect-square rounded-2xl overflow-hidden bg-[#f5dbd8]">
                 <Image
-                  src="/hero1.jpg"
+                  src="/hero1.webp"
                   alt="セラピスト施術イメージ"
                   width={320}
                   height={320}
@@ -79,7 +79,7 @@ export default function Page() {
               </div>
               <div className="aspect-square rounded-2xl overflow-hidden bg-[#f5dbd8]">
                 <Image
-                  src="/hero2.jpg"
+                  src="/hero2.webp"
                   alt="サロンイメージ"
                   width={320}
                   height={320}
